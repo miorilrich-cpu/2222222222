@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miori Shop - ระบบรีวิว</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Prompt', sans-serif; }
+    </style>
+</head>
+<body class="bg-pink-50 flex justify-center items-center min-h-screen">
+
+    <div class="w-full max-w-md bg-white min-h-screen shadow-lg relative overflow-hidden flex flex-col">
+        
+        <!-- ================= PAGE 1: หน้าแรก (ฝั่งซ้าย) ================= -->
+        <div id="page-user" class="flex flex-col flex-grow">
+            <!-- Header -->
+            <div class="bg-pink-100 p-4 pb-3 rounded-b-3xl relative shadow-sm">
+                <!-- ปุ่มเข้าสู่ระบบแอดมินเล็กๆ มุมขวาบน -->
+                <button onclick="switchPage('admin')" class="absolute top-3 right-3 text-xs bg-white/80 hover:bg-white text-pink-500 px-2.5 py-1 rounded-full shadow-sm transition flex items-center gap-1">
+                    <i class="fa-solid fa-lock text-[10px]"></i> แอดมิน
+                </button>
+
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-pink-300 rounded-full flex items-center justify-center text-white text-xl shadow-inner">
+                        <i class="fa-solid fa-cat"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-pink-700 text-lg flex items-center gap-1">
+                            Miori Shop <span class="text-xs">🌸</span>
+                        </h1>
+                        <p class="text-xs text-pink-500">รีวิวจากลูกค้าของเรา 💖</p>
+                    </div>
+                </div>
+
+                <!-- Banner น่ารักๆ -->
+                <div class="mt-3 bg-pink-200/60 border-2 border-dashed border-pink-300 rounded-2xl p-4 text-center relative">
+                    <span class="text-2xl">🎀</span>
+                    <h2 class="text-pink-700 font-bold text-sm">ขอบคุณทุกรีวิวจากลูกค้านะคะ 💕</h2>
+                    <p class="text-[11px] text-pink-500 mt-0.5">รีวิวของคุณคือพลังใจของเรา 🌸</p>
+                </div>
+            </div>
+
+            <!-- Rating Overview -->
+            <div class="p-4 flex items-center justify-between border-b border-pink-100">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl font-bold text-amber-500">4.8</span>
+                    <div class="text-xs text-gray-500">
+                        <div class="text-amber-400">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        จาก 5 ดาว
+                    </div>
+                </div>
+                <div class="text-xs bg-pink-100 text-pink-600 px-3 py-1.5 rounded-full font-medium">
+                    <i class="fa-solid fa-comment-dots"></i> 128 รีวิว
+                </div>
+            </div>
+
+            <!-- เขียนรีวิว Button -->
+            <div class="px-4 py-3">
+                <button class="w-full bg-pink-400 hover:bg-pink-500 text-white py-2.5 rounded-2xl text-sm font-medium shadow-md shadow-pink-200 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-pen-nib"></i> เขียนรีวิว
+                </button>
+            </div>
+
+            <!-- รายการรีวิวจากลูกค้า -->
+            <div class="px-4 pb-6 flex-grow space-y-3">
+                <div class="flex justify-between items-center text-xs text-gray-500 px-1">
+                    <span class="font-semibold text-pink-700">รีวิวจากลูกค้า 🩷</span>
+                    <span>เรียงตามล่าสุด <i class="fa-solid fa-chevron-down text-[10px]"></i></span>
+                </div>
+
+                <!-- รีวิว item 1 -->
+                <div class="bg-pink-50/50 p-3.5 rounded-2xl border border-pink-100">
+                    <div class="flex justify-between items-start">
+                        <div class="flex gap-2.5">
+                            <div class="w-9 h-9 bg-pink-200 rounded-full flex items-center justify-center text-pink-600 text-sm">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold text-gray-700">น้องมายด์</h3>
+                                <span class="text-[10px] text-gray-400">15 ก.ย. 2568</span>
+                            </div>
+                        </div>
+                        <div class="text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-2">ชอบมากค่ะ บริการดีมาก ตอบไว เป็นกันเองสุดๆ ไว้มาอุดหนุนอีกแน่นอนค่ะ 💖</p>
+                    <div class="mt-2 flex justify-end items-center gap-3 text-[11px] text-gray-400">
+                        <span><i class="fa-regular fa-heart text-pink-400"></i> 12</span>
+                        <span class="text-pink-500 font-medium">เพิ่มเติม ></span>
+                    </div>
+                </div>
+
+                <!-- รีวิว item 2 -->
+                <div class="bg-pink-50/50 p-3.5 rounded-2xl border border-pink-100">
+                    <div class="flex justify-between items-start">
+                        <div class="flex gap-2.5">
+                            <div class="w-9 h-9 bg-pink-200 rounded-full flex items-center justify-center text-pink-600 text-sm">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold text-gray-700">Pimmy</h3>
+                                <span class="text-[10px] text-gray-400">12 ก.ย. 2568</span>
+                            </div>
+                        </div>
+                        <div class="text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-2">ส่งไวมากค่ะ แพ็คของดีมาก ประทับใจสุดๆ ไว้จะมารีวิวอีกแน่นอนอน 💕</p>
+                    <div class="mt-2 flex justify-end items-center gap-3 text-[11px] text-gray-400">
+                        <span><i class="fa-regular fa-heart text-pink-400"></i> 8</span>
+                        <span class="text-pink-500 font-medium">เพิ่มเติม ></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= PAGE 2: หน้าแอดมินจัดการรีวิว (ฝั่งขวา) ================= -->
+        <div id="page-admin" class="hidden flex flex-col flex-grow bg-gray-50">
+            <!-- Admin Header -->
+            <div class="bg-pink-600 text-white p-4 flex justify-between items-center shadow-md">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-shield-heart text-lg"></i>
+                    <h1 class="font-bold text-sm">จัดการรีวิว (แอดมิน)</h1>
+                </div>
+                <button onclick="switchPage('user')" class="text-xs bg-pink-700 hover:bg-pink-800 px-3 py-1.5 rounded-lg transition flex items-center gap-1">
+                    <i class="fa-solid fa-right-from-bracket"></i> ออกจากระบบ
+                </button>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-4 gap-2 p-3 bg-white border-b text-center text-xs">
+                <div class="bg-amber-50 p-2 rounded-xl border border-amber-100">
+                    <i class="fa-regular fa-clock text-amber-500 mb-1"></i>
+                    <div class="text-[10px] text-gray-500">รออนุมัติ</div>
+                    <div class="font-bold text-amber-600">18</div>
+                </div>
+                <div class="bg-emerald-50 p-2 rounded-xl border border-emerald-100">
+                    <i class="fa-regular fa-circle-check text-emerald-500 mb-1"></i>
+                    <div class="text-[10px] text-gray-500">อนุมัติแล้ว</div>
+                    <div class="font-bold text-emerald-600">42</div>
+                </div>
+                <div class="bg-gray-100 p-2 rounded-xl border border-gray-200">
+                    <i class="fa-regular fa-eye-slash text-gray-500 mb-1"></i>
+                    <div class="text-[10px] text-gray-500">ถูกซ่อน</div>
+                    <div class="font-bold text-gray-600">3</div>
+                </div>
+                <div class="bg-rose-50 p-2 rounded-xl border border-rose-100">
+                    <i class="fa-regular fa-trash-can text-rose-500 mb-1"></i>
+                    <div class="text-[10px] text-gray-500">ลบแล้ว</div>
+                    <div class="font-bold text-rose-600">2</div>
+                </div>
+            </div>
+
+            <!-- Admin Content List -->
+            <div class="p-3 space-y-3 flex-grow overflow-y-auto">
+                <div class="flex justify-between items-center text-xs px-1 text-gray-500">
+                    <span class="font-bold text-pink-600">รีวิวที่รออนุมัติ (18 รายการ)</span>
+                    <span>></span>
+                </div>
+
+                <!-- Admin Item 1 -->
+                <div class="bg-white p-3 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-start">
+                        <div class="flex gap-2">
+                            <div class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 text-xs">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold text-gray-700">น้องมายด์ <span class="text-[10px] font-normal text-gray-400">16 ก.ย. 2568</span></h3>
+                                <div class="text-amber-400 text-[10px]">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-[10px] bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-medium">รออนุมัติ</span>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-2">สวยมากค่ะ ไว้จะมาอุดหนุนอีกนะคะ</p>
+                    
+                    <!-- Action Buttons -->
+                    <div class="mt-3 flex justify-end gap-2 border-t pt-2">
+                        <button class="bg-emerald-500 hover:bg-emerald-600 text-white text-[11px] px-3 py-1 rounded-lg flex items-center gap-1">
+                            <i class="fa-solid fa-check"></i> อนุมัติ
+                        </button>
+                        <button class="bg-amber-100 hover:bg-amber-200 text-amber-700 text-[11px] px-3 py-1 rounded-lg flex items-center gap-1">
+                            <i class="fa-solid fa-eye-slash"></i> ซ่อน
+                        </button>
+                        <button class="bg-rose-100 hover:bg-rose-200 text-rose-600 text-[11px] px-3 py-1 rounded-lg flex items-center gap-1">
+                            <i class="fa-solid fa-trash"></i> ลบ
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Admin Item 2 -->
+                <div class="bg-white p-3 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-start">
+                        <div class="flex gap-2">
+                            <div class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 text-xs">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold text-gray-700">พิมพ໌ <span class="text-[10px] font-normal text-gray-400">15 ก.ย. 2568</span></h3>
+                                <div class="text-amber-400 text-[10px]">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-[10px] bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-medium">รออนุมัติ</span>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-2">สินค้าดีมากค่ะ แพ็คดีมาก</p>
+                    
+                    <div class="mt-3 flex justify-end gap-2 border-t pt-2">
+                        <button class="bg-emerald-500 hover:bg-emerald-600 text-white text-[11px] px-3 py-1 rounded-lg flex items-center gap-1">
+                            <i class="fa-solid fa-check"></i> อนุมัติ
+                        </button>
+                        <button class="bg-amber-100 hover:bg-amber-200 text-amber-700 text-[11px] px-3 py-1 rounded-lg flex items-center gap-1">
+                            <i class="fa-solid fa-eye-slash"></i> ซ่อน
+                        </button>
+                        <button class="bg-rose-100 hover:bg-rose-200 text-rose-600 text-[11px] px-3 py-1 rounded-lg flex items-center gap-1">
+                            <i class="fa-solid fa-trash"></i> ลบ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript สำหรับสลับหน้าจอไปมาระหว่าง User และ Admin -->
+    <script>
+        function switchPage(page) {
+            const userPage = document.getElementById('page-user');
+            const adminPage = document.getElementById('page-admin');
+
+            if (page === 'admin') {
+                userPage.classList.add('hidden');
+                adminPage.classList.remove('hidden');
+            } else {
+                adminPage.classList.add('hidden');
+                userPage.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
