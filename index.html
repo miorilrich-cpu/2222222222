@@ -11,7 +11,6 @@
         body { font-family: 'Prompt', sans-serif; background-color: #fff0f3; }
         .soft-shadow { box-shadow: 0 8px 30px rgba(255, 182, 193, 0.3); }
         .sparkle { animation: pulse 2s infinite; }
-        /* กำหนดสัดส่วนกรอบรูปแบนเนอร์ 1122x495 (กว้าง:สูง ประมาณ 2.26:1) */
         .banner-container {
             aspect-ratio: 1122 / 495;
         }
@@ -46,7 +45,6 @@
 
                 <!-- กรอบรูปภาพแบนเนอร์ ขนาด 1122x495 -->
                 <div class="mt-4 w-full banner-container bg-pink-50/70 rounded-2xl border-2 border-dashed border-pink-200/80 overflow-hidden relative flex flex-col items-center justify-center text-center p-4 shadow-inner">
-                    <!-- หากมีรูปภาพจริง สามารถเปลี่ยนแท็ก img ด้านล่างนี้ หรือใส่ src รูปได้เลยครับ -->
                     <!-- <img src="URL_รูปภาพของคุณ" alt="Banner" class="w-full h-full object-cover absolute inset-0"> -->
                     
                     <div class="absolute inset-0 bg-gradient-to-tr from-pink-100/40 to-rose-50/40"></div>
@@ -60,12 +58,12 @@
                 </div>
             </div>
 
-            <!-- Rating Overview หัวใจ -->
+            <!-- Rating Overview หัวใจ (เพิ่มระยะห่าง space-x-1) -->
             <div class="px-5 py-3 flex items-center justify-between border-b border-pink-50">
                 <div class="flex items-center gap-2.5">
                     <span class="text-xl font-semibold text-gray-800">4.8</span>
                     <div class="text-[11px] text-gray-400">
-                        <div class="text-pink-400 text-[10px] space-x-0.5">
+                        <div class="text-pink-400 text-[10px] space-x-1">
                             <i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart-half-stroke"></i>
                         </div>
                         จาก 5 คะแนน
@@ -102,7 +100,8 @@
                                 <span class="text-[10px] text-gray-300 font-light">15 ก.ย. 2568</span>
                             </div>
                         </div>
-                        <div class="text-pink-400 text-[10px]">
+                        <!-- หัวใจรีวิวแบบเว้นระยะห่าง -->
+                        <div class="text-pink-400 text-[10px] space-x-1">
                             <i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i>
                         </div>
                     </div>
@@ -128,7 +127,8 @@
                                 <span class="text-[10px] text-gray-300 font-light">12 ก.ย. 2568</span>
                             </div>
                         </div>
-                        <div class="text-pink-400 text-[10px]">
+                        <!-- หัวใจรีวิวแบบเว้นระยะห่าง -->
+                        <div class="text-pink-400 text-[10px] space-x-1">
                             <i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i>
                         </div>
                     </div>
@@ -199,7 +199,7 @@
                             </div>
                             <div>
                                 <h3 class="text-[11px] font-medium text-gray-700">น้องมายด์ <span class="text-[9px] font-light text-gray-300">16 ก.ย.</span></h3>
-                                <div class="text-pink-400 text-[9px]">
+                                <div class="text-pink-400 text-[9px] space-x-1">
                                     <i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i>
                                 </div>
                             </div>
@@ -232,7 +232,7 @@
                             </div>
                             <div>
                                 <h3 class="text-[11px] font-medium text-gray-700">Pimmy <span class="text-[9px] font-light text-gray-300">15 ก.ย.</span></h3>
-                                <div class="text-pink-400 text-[9px]">
+                                <div class="text-pink-400 text-[9px] space-x-1">
                                     <i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i>
                                 </div>
                             </div>
